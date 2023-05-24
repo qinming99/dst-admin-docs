@@ -20,4 +20,4 @@ npm run start
 npm run build
 ```
 
-访问： `http://localhost:3000`.
+浏览器访问： `http://localhost:3000`.
