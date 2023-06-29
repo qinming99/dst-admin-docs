@@ -5,14 +5,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
   title: 'DST-ADMIN',
-  tagline: '介绍如何使用dst-admin,以及开服中遇到的问题对应的一些解决方法',
+  tagline: 'DST-ADMIN 的文档站点',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'dst-admin-docs', // Usually your GitHub org/user name.
-  projectName: 'dst-admin-docs', // Usually your repo name.
+  organizationName: 'dst-admin-docs',
+  projectName: 'dst-admin',
+  i18n: {
+        defaultLocale: 'zh-CN',
+        locales: ['zh-CN'],
+  },
 
   presets: [
     [
@@ -21,8 +25,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/qinming99/dst-admin',
+          editUrl: 'https://github.com/qinming99/dst-admin-docs/edit/main',
+          routeBasePath: "/",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -41,13 +45,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: '使用文档',
-          },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          {
             href: 'https://github.com/qinming99/dst-admin',
             label: 'GitHub',
             position: 'right',
@@ -62,7 +59,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: '使用文档',
-                to: '/docs/intro',
+                to: '/',
               },
             ],
           },
@@ -79,15 +76,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
               },
             ],
           },
-          {
-            title: '更多',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/qinming99/dst-admin',
-              },
-            ],
-          },
         ],
         copyright: `Copyright © 2023-${new Date().getFullYear()} dst-admin Inc. `,
       },
@@ -97,18 +85,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       },
     }),
   themes: [
-    // ... Your other themes.
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
         language: ["en", "zh"],
-        // ```
       }),
     ],
   ],
